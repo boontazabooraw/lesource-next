@@ -1,10 +1,17 @@
 import supabase from "@/lib/supabase";
 
-export async function GET() {
+export async function GET(request) {
 
-    const { data, error } = await supabase
-        .from('Wares')
-        .select('*');
+    const { searchParams } = new URL(request.url);
+    const search = searchParams.get("search") || "";
+
+    let query = supabase.from('Wares').select('*');
+
+    if (search) {
+        query = query.ilike("filename", `%${search}%`);
+    }
+
+    const { data, error } = await query;
 
     if (error) {
         return new Response(JSON.stringify(
