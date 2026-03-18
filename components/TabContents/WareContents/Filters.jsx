@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Filters = ({handleSearchChange, value}) => {
+const Filters = ({ handleSearchChange, value }) => {
   return (
     <div>
-        <input onChange={handleSearchChange} type='text' placeholder='Search...' value={value}/>
+      <input
+        className='border border-white/20 px-2 py-1 rounded-md w-full'
+        onChange={handleSearchChange} type='text' placeholder='Search...' value={value} />
     </div>
   )
 }

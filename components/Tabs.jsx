@@ -7,16 +7,20 @@ const Tabs = ({ tabData }) => {
     const [activeTabIndex, setActiveTabIndex] = useState(0);
     return (
         <>
-            <div className='flex justify-center border gap-10 p-2'>
+            <div className='flex justify-center pt-4 relative'>
                 {
                     /* TAB GROUP (Wares, Guides, About) */
 
                     tabData.map((tab, index) => (
                         <div key={index}>
-                            <button onClick={() => {
-                                setActiveTabIndex(index)
-                            }} className={`${activeTabIndex === index ? 'border' : ''}`}>
-                                {tab.title}
+                            <button
+                                onClick={() => {
+                                    setActiveTabIndex(index)
+                                }}
+                                className={`${activeTabIndex === index ? 'bg-accent-900' : 'bg-transparent'} px-6 py-2 rounded-t-md`}>
+                                <span>
+                                    {tab.title}
+                                </span>
                             </button>
                         </div>
                     ))

@@ -35,6 +35,7 @@ const Wares = () => {
 
     useEffect(() => {
         fetchWares();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [search])
 
     if (error) {
@@ -45,26 +46,24 @@ const Wares = () => {
         )
     }
 
-
     return (
-        <div className="w-full">
+        <div className="flex flex-col gap-2 flex-wrap">
             <Filters handleSearchChange={handleSearchChange} value={search} />
             {files.length < 1 ? (
                 <div>No files :(</div>
             ) : (
-                <ul>
+                <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
                     {loading === true ? (
                         <div>
                             <p>Luding...</p>
                         </div>
                     ) :
                         files.map((ware) => (
-                            <li key={ware.id}>{ware.filename}</li>
+                            <li className="min-w-full h-50 border" key={ware.id}>{ware.filename}</li>
                         ))
                     }
                 </ul>
             )}
-
         </div>
     )
 }
