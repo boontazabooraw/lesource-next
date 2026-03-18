@@ -10,8 +10,8 @@ export default function Home() {
   ];
 
   return (
-    <div>
+    <>
       <Tabs tabData={tabData} />
-    </div>
+    </>
   );
 }

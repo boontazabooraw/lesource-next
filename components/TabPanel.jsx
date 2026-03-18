@@ -2,7 +2,7 @@ import React from 'react'
 
 const TabPanel = ({ children }) => {
     return (
-        <div className='flex justify-center items-center bg-accent-900 p-4'>
+        <div className='bg-accent-900 p-4 h-full grow'>
             {children}
         </div>
     )

@@ -6,18 +6,18 @@ import TabPanel from './TabPanel';
 const Tabs = ({ tabData }) => {
     const [activeTabIndex, setActiveTabIndex] = useState(0);
     return (
-        <>
-            <div className='flex justify-center pt-4 relative'>
+        <div className='flex flex-col flex-wrap min-h-screen'>
+            <div className='flex justify-center'>
                 {
                     /* TAB GROUP (Wares, Guides, About) */
 
                     tabData.map((tab, index) => (
-                        <div key={index}>
+                        <div key={index} className='pt-4'>
                             <button
                                 onClick={() => {
                                     setActiveTabIndex(index)
                                 }}
-                                className={`${activeTabIndex === index ? 'bg-accent-900' : 'bg-transparent'} px-6 py-2 rounded-t-md`}>
+                                className={`${activeTabIndex === index ? 'bg-accent-900 outline-accent-900 outline-1' : 'bg-transparent'} px-6 py-2 rounded-t-md`}>
                                 <span>
                                     {tab.title}
                                 </span>
@@ -26,20 +26,20 @@ const Tabs = ({ tabData }) => {
                     ))
                 }
             </div>
-            <div>
-                {
-                    /* TAB CONTENT */
 
-                    tabData.map((tab, index) => (
-                        activeTabIndex === index ? (
-                            <TabPanel key={index}>
-                                {tab.content}
-                            </TabPanel>
-                        ) : null
-                    ))
-                }
-            </div>
-        </>
+            {
+                /* TAB CONTENT */
+
+                tabData.map((tab, index) => (
+                    activeTabIndex === index ? (
+                        <TabPanel key={index}>
+                            {tab.content}
+                        </TabPanel>
+                    ) : null
+                ))
+            }
+
+        </div>
     )
 }
 

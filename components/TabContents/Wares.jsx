@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Filters from "./WareContents/Filters";
+import WareCards from "./WareContents/WareCards";
 
 const Wares = () => {
 
@@ -59,7 +60,7 @@ const Wares = () => {
                         </div>
                     ) :
                         files.map((ware) => (
-                            <li className="min-w-full h-50 border" key={ware.id}>{ware.filename}</li>
+                            <WareCards key={ware.id} id={ware.id} filename={ware.filename}/>
                         ))
                     }
                 </ul>
