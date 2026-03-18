@@ -3,6 +3,7 @@
 @theme {
   /* backgrounds /
 --bg-carbon-900: #111d13; / Carbon Black (darkest) */
+  --color-deep-900: #16221c;
   --color-deep-700: #2a352f;
   --color-mid-500: #6b746e;
 
@@ -36,4 +37,8 @@ body {
   background: var(--color-accent-900);
   color: var(--color-soft-700);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

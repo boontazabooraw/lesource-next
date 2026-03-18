@@ -60,7 +60,12 @@ const Wares = () => {
                         </div>
                     ) :
                         files.map((ware) => (
-                            <WareCards key={ware.id} id={ware.id} filename={ware.filename}/>
+                            <WareCards 
+                            key={ware.id} 
+                            id={ware.id} 
+                            filename={ware.filename} 
+                            category={ware.category}
+                            download_link={ware.download_link} />
                         ))
                     }
                 </ul>

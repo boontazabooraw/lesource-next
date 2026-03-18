@@ -17,7 +17,7 @@ const Tabs = ({ tabData }) => {
                                 onClick={() => {
                                     setActiveTabIndex(index)
                                 }}
-                                className={`${activeTabIndex === index ? 'bg-accent-900 outline-accent-900 outline-1' : 'bg-transparent'} px-6 py-2 rounded-t-md`}>
+                                className={`${activeTabIndex === index ? 'bg-deep-700 outline-deep-700 outline-1' : 'bg-transparent'} px-6 py-2 rounded-t-md`}>
                                 <span>
                                     {tab.title}
                                 </span>
