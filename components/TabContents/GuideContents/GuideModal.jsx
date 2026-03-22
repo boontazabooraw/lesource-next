@@ -1,9 +1,14 @@
-import React from 'react'
+import { useEffect, useState } from "react";
 
-const GuideModal = ({title, content}) => {
-  return (
-    <div>GuideModal</div>
-  )
+
+const GuideModal = ({ children, onClose }) => {
+
+
+    return (
+        <div className=''>
+            {children}
+        </div>
+    )
 }
 
 export default GuideModal
