@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import TabPanel from './TabPanel';
+import Providers from './Providers';
 
 const Tabs = ({ tabData }) => {
     const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -38,7 +39,6 @@ const Tabs = ({ tabData }) => {
                     ) : null
                 ))
             }
-
         </div>
     )
 }

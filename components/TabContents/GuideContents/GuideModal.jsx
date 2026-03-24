@@ -1,12 +1,9 @@
-import { useEffect, useState } from "react";
-
-
-const GuideModal = ({ children, onClose }) => {
-
+const GuideModal = ({ title, content }) => {
 
     return (
         <div className=''>
-            {children}
+            <p>{title}</p>
+            <p>{content}</p>
         </div>
     )
 }
